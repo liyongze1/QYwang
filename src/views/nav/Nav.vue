@@ -12,7 +12,7 @@
       </div>
       <div class="nav">
         <ul>
-          <li class="item">
+          <li class="item top_style">
             <router-link to="/destination">目的地</router-link>
           </li>
           <li class="item">
@@ -47,7 +47,9 @@
         <ul>
           <li class="item_search">
             <span class="iconfont icon-sousuo"></span>
-            <span style="margin-right: 10px; margin-left: 10px; color: #c0c0c0;">|</span>
+            <span style="margin-right: 10px; margin-left: 10px; color: #c0c0c0"
+              >|</span
+            >
           </li>
           <li class="tb">
             <span class="iconfont icon-taobao"></span>
@@ -62,10 +64,14 @@
             <span class="iconfont icon-weibo"></span>
           </li>
           <li class="item_register">
-            <span class="register">注册</span>
+            <span class="register">
+              <router-link to="/register">注册</router-link>
+            </span>
           </li>
           <li class="item_login">
-            <span class="login">登录</span>
+            <span class="login">
+              <router-link to="/login">登录</router-link>
+            </span>
           </li>
         </ul>
       </div>
@@ -106,9 +112,23 @@ export default {};
         padding: 0 10px;
         height: 60px;
         line-height: 60px;
+        position: relative;
         a {
           color: #fff;
         }
+      }
+      ul .item:hover::before {
+        height: 3px;
+      }
+      ul .item::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #fff;
+        transition: all 0.2s ease-in-out;
       }
     }
     .login_choose {
@@ -121,7 +141,7 @@ export default {};
         display: inline-block;
         line-height: 60px;
       }
-      .icon-sousuo{
+      .icon-sousuo {
         font-size: 20px;
       }
       .search {
