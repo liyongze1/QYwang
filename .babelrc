@@ -1,0 +1,12 @@
+{
+    // "presets": [["es2015", { "modules": false }]] ES6->ES5,
+    "plugins": [
+      [
+        "component",
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]
+    ]
+  }
