@@ -2,7 +2,7 @@
   <div class="header">
     <div class="warp">
       <div class="logo_box">
-        <router-link to="/">
+        <router-link to="/" exact>
           <img
             src="https://fes.qyerstatic.com/FgP-BkmxyKWjMKv-bAbvpXg4G2r2?imageslim"
             alt=""
@@ -65,12 +65,12 @@
           </li>
           <li class="item_register">
             <span class="register">
-              <router-link to="/register">注册</router-link>
+              <router-link to="/register" style="color:#fff" router-link-active="action">注册</router-link>
             </span>
           </li>
           <li class="item_login">
             <span class="login">
-              <router-link to="/login">登录</router-link>
+              <router-link to="/login" style="color:#fff">登录</router-link>
             </span>
           </li>
         </ul>
@@ -80,18 +80,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created(){
+    // 获取当前路由的信息
+    console.log(this.$route)
+  }
+};
 </script>
 
 <style lang="less">
 .header {
   position: absolute;
+  z-index: 999;
   top: 0;
   .warp {
     width: 1440px;
     height: 60px;
     margin: 0 auto;
-    background-color: red;
     .logo_box {
       float: left;
       width: 76px;
@@ -107,6 +112,7 @@ export default {};
     .nav {
       float: left;
       font-size: 16px;
+      margin-left: 20px;
       ul > li {
         float: left;
         padding: 0 10px;
@@ -115,7 +121,12 @@ export default {};
         position: relative;
         a {
           color: #fff;
+          font-weight: 700;
+          font-size: 16px;
         }
+        // .my{
+        //   color: #000 !important;
+        // }
       }
       ul .item:hover::before {
         height: 3px;
@@ -149,5 +160,6 @@ export default {};
       }
     }
   }
+  
 }
 </style>

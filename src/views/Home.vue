@@ -9,7 +9,7 @@
 
 <script>
 import Nav from './nav/Nav.vue'
-import Banner from "./banner/Banner.vue"
+import Banner from '../views/banner/Banner.vue'
 export default {
   components: { Nav,Banner },
 
@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style>
-
+.banner_box{
+    height: 480px;
+    position: relative;
+}
 </style>
